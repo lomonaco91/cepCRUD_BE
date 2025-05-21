@@ -10,4 +10,5 @@ public interface UserService {
     Page<UserResponse> getAll(int page, int size, String sortBy);
     UserResponse update(Long id, UserRequest userRequest);
     void delete(Long id);
+    UserResponse getByEmail(String email);
 }

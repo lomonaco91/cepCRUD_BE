@@ -1,5 +1,6 @@
 package cepAPI.service.impl;
 
+import cepAPI.config.JwtService;
 import cepAPI.dto.request.AddressRequest;
 import cepAPI.dto.response.AddressResponse;
 import cepAPI.exception.ResourceNotFoundException;
@@ -24,6 +25,8 @@ public class AddressServiceImpl implements AddressService {
     private final AddressRepository addressRepository;
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+
+    JwtService jwtService = null;
 
     @Override
     public AddressResponse save(AddressRequest addressRequest) {
@@ -83,4 +86,5 @@ public class AddressServiceImpl implements AddressService {
         }
         addressRepository.deleteById(id);
     }
+
 }

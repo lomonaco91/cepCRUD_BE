@@ -36,11 +36,11 @@ public class AuthService {
                 .build();
 
         userRepository.save(user);
-
         var jwtToken = jwtService.generateToken(user);
 
         return JwtResponse.builder()
                 .token(jwtToken)
+                .userId(user.getId())
                 .build();
     }
 
@@ -59,6 +59,7 @@ public class AuthService {
 
         return JwtResponse.builder()
                 .token(jwtToken)
+                .userId(user.getId())
                 .build();
     }
 }

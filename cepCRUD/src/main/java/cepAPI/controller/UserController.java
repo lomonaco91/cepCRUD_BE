@@ -53,4 +53,10 @@ public class UserController {
         userService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/email/{email}")
+    public ResponseEntity<UserResponse> getByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(userService.getByEmail(email));
+    }
+
 }
